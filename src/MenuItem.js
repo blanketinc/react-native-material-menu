@@ -21,23 +21,13 @@ function MenuItem({
       style={[styles.container, style]}
       underlayColor={underlayColor}
     >
-      <Text
-        ellipsizeMode={Platform.OS === 'ios' ? 'clip' : 'tail'}
-        numberOfLines={1}
-        style={[
-          styles.title,
-          disabled && { color: disabledTextColor },
-          textStyle,
-        ]}
-      >
-        {children}
-      </Text>
+      {children}
     </TouchableHighlight>
   );
 }
 
 MenuItem.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.object,
   disabled: PropTypes.bool,
   disabledTextColor: PropTypes.string,
   onPress: PropTypes.func,
